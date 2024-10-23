@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import Firstbutton from './Firstbutton';
+import Firstbutton from './src/Firstbutton';
 import type {PropsWithChildren} from 'react';
 import {
   Button,
@@ -26,6 +26,10 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import KeyboardAvoidingComponent from './src/KeyboardAvoidingComponent';
+import NewKeyboardAvoid from './src/NewKeyboardAvoid';
+import KeyboardAvoid5 from './src/keyboardAvoid5';
+import Keybavoid55 from './src/Keybavoid55';
 
 // type SectionProps = PropsWithChildren<{
 //   title: string;
@@ -35,7 +39,7 @@ import {
 //   const isDarkMode = useColorScheme() === 'dark';
 //   return (
 //     <View style={styles.sectionContainer}>
-  
+
 //     </View>
 //   );
 // }
@@ -43,20 +47,21 @@ import {
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
-
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
   return (
-    <SafeAreaView style={[backgroundStyle, {flex:1,}]}>
-     <Firstbutton/>
+    <SafeAreaView style={[backgroundStyle, {flex: 1}]}>
+      {/* <Firstbutton /> */}
+      {/* <KeyboardAvoidingComponent/> */}
+      {/* <NewKeyboardAvoid/> */}
+    <Keybavoid55/>
     </SafeAreaView>
+ 
   );
 }
 
-const styles = StyleSheet.create({
-  
-});
+const styles = StyleSheet.create({});
 
 export default App;

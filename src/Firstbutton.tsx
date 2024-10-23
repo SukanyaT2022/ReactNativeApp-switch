@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 
+// https://www.youtube.com/watch?v=UcJyQ5MOoJo
+
 import {
   Button,
   Image,
@@ -14,111 +16,98 @@ import {
   View,
   KeyboardAvoidingView,
   Switch,
+  Platform,
 } from 'react-native';
 
 const Firstbutton = () => {
-  const [ison, setIson] = useState(false);
+  // const [ison, setIson] = useState(false);
+  const [valueInput, setValueInput] = useState('');
 
-  const  changeBGFunc = () => setIson(previousState => !previousState);
-  
-    // setIson(previousState => !ison);
+  const inputFunc = () => {
+    setValueInput;
+  };
 
-    // if (ison === true){
-    //   setIson(false)
-    // }else{
-    //   setIson(true)
-    // }
+  // const changeBGFunc = () => {
+  //   setIson(previousState => !previousState); // this word with true or false only - not work with string and number
+  // };
+
+  // setIson(previousState => !ison);
+
+  // if (ison === true){
+  //   setIson(false)
+  // }else{
+  //   setIson(true)
+  // }
   // };
 
   return (
-    <View
-    style={{
-backgroundColor: ison === true ? 'black' : 'pink' ,
-                                  
-
-
-
-    }}
     
-    >
-      <Image
+    <KeyboardAvoidingView
+    keyboardVerticalOffset={50}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}>
+      <ScrollView  contentContainerStyle={{flexGrow:1}}>
+        <View style={styles.inner}>
+          <Text style={styles.header}>Header</Text>
+          <Image
         source={{
           uri: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBhbmljJTIwZG9nfGVufDB8fDB8fHww',
         }}
-        style={styles.imagestyle}
+        style={{    width: '40%',
+          height: 150,
+          alignSelf: 'center',
+          marginVertical: 20,
+          borderRadius: 100,
+      }}
       />
-      <Text style={styles.textstyle}>Where does he come from?</Text>
-      {/* <KeyboardAvoidingView
-          behavior="padding"
-          style={{
-            flex: 0.5,
-            backgroundColor: 'orange',
-            alignItems: 'center',
-            justifyContent: 'center',
-            position: 'absolute',
-            width: '100%',
-          }}>  */}
-      <View style={styles.wrapAll}>
-        <TextInput
-          style={styles.inputstyle}
+
+          <TextInput placeholder="Username" style={styles.textInput} />
+          <TextInput
+        
           placeholder="Type something --input box"
           placeholderTextColor="blue"
+          onChangeText={setValueInput}
+          value={valueInput}
         />
-        <TouchableOpacity style={styles.inputstyle}>
-          <Text style={styles.textopacitystyle}>Click me - touchOpaCity</Text>
-        </TouchableOpacity>
-      </View>
-      {/* </KeyboardAvoidingView>  */}
 
-      <View
-        style={{
-          width: '30%',
-          alignSelf: 'center',
-        }}>
-        <Switch
-          thumbColor={ison ? 'white' : 'red'}
-          trackColor={{false: 'blue', true: 'green'}}
-          onValueChange={changeBGFunc}
-          value={ison}></Switch>
+          <View style={styles.btnContainer}>
+            <Button title="Submit" onPress={() => null} />
+          </View>
+        </View>
+      </ScrollView>
+      {/* <View style={{height:'40%'}}>
 
-      </View>
-    </View>
+      </View> */}
+    </KeyboardAvoidingView>
   );
 };
 
+
+
+
 const styles = StyleSheet.create({
-  textstyle: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    paddingHorizontal: 30,
-    textAlign: 'left',
+  container: {
+    flex: 1,
   },
-
-  imagestyle: {
-    width: '40%',
-    height: 150,
-    alignSelf: 'center',
-    marginVertical: 20,
-    borderRadius: 100,
+  inner: {
+    padding: 24,
+    flex: 1,
+    justifyContent: 'space-around',
   },
-
-  wrapAll: {
-    backgroundColor: 'green',
+  header: {
+    fontSize: 36,
+    marginBottom: 48,
   },
-
-  inputstyle: {
-    marginHorizontal: 20,
-    backgroundColor: 'orange',
-    paddingVertical: 20,
-    borderRadius: 30,
-    marginVertical: 20,
-    fontSize: 20,
-    textAlign: 'center',
+  textInput: {
+    height: 40,
+    borderColor: '#000000',
+    borderBottomWidth: 1,
+    marginBottom: 36,
   },
-  textopacitystyle: {
-    textAlign: 'center',
-    fontWeight: 'bold',
-    color: 'blue',
+  btnContainer: {
+    backgroundColor: 'white',
+    marginTop: 12,
   },
 });
+
 export default Firstbutton;
