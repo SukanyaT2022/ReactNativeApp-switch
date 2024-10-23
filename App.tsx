@@ -14,6 +14,7 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
+  Switch,
   Text,
   useColorScheme,
   View,
@@ -30,6 +31,9 @@ import KeyboardAvoidingComponent from './src/KeyboardAvoidingComponent';
 import NewKeyboardAvoid from './src/NewKeyboardAvoid';
 import KeyboardAvoid5 from './src/keyboardAvoid5';
 import Keybavoid55 from './src/Keybavoid55';
+import Switch55 from './src/Switch55';
+import BasicJavaS from './src/BasicJavaS';
+import Icon from './src/Icon55';
 
 // type SectionProps = PropsWithChildren<{
 //   title: string;
@@ -56,7 +60,10 @@ function App(): React.JSX.Element {
       {/* <Firstbutton /> */}
       {/* <KeyboardAvoidingComponent/> */}
       {/* <NewKeyboardAvoid/> */}
-    <Keybavoid55/>
+    {/* <Keybavoid55/> */}
+{/* <Switch55/> */}
+{/* <BasicJavaS/> */}
+<Icon/>
     </SafeAreaView>
  
   );

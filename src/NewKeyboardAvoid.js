@@ -44,11 +44,13 @@ const NewKeyboardAvoid = () => {
 
 <KeyboardAvoidingView
 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+// keyboardVerticalOffset={Platform.OS === "ios" ? 100: 0}
+style={{
+  flex: 1,
 
-// style={{
-//   backgroundColor: ison === true ? 'black' : 'pink',
-// }}
+}}
 >
+  <ScrollView contentContainerStyle={{flexGrow: 1, paddingBottom:100,}}>
 <Image
   source={{
     uri: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBhbmljJTIwZG9nfGVufDB8fDB8fHww',
@@ -79,21 +81,24 @@ behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     onChangeText={setValueInput}
     value={valueInput}
   />
+   <TextInput
+    style={styles.inputstyle}
+    placeholder="Type something --input box"
+    placeholderTextColor="blue"
+    onChangeText={setValueInput}
+    value={valueInput}
+  />
+   <TextInput
+    style={styles.inputstyle}
+    placeholder="Type something --input box-last "
+    placeholderTextColor="blue"
+    onChangeText={setValueInput}
+    value={valueInput}
+  />
   <TouchableOpacity style={styles.inputstyle}>
     <Text style={styles.textopacitystyle}>Click me - touchOpaCity</Text>
   </TouchableOpacity>
-
-{/* <View
-  style={{
-    width: '30%',
-    alignSelf: 'center',
-  }}>
-  <Switch
-    thumbColor={ison ? 'white' : 'red'}
-    trackColor={{false: 'blue', true: 'green'}}
-    onValueChange={changeBGFunc}
-    value={ison}></Switch>
-</View> */}
+  </ScrollView>
 </KeyboardAvoidingView>
 );
 };

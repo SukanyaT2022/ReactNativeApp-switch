@@ -42,6 +42,12 @@ const Keybavoid55 = () => {
         value={password} 
         onChangeText={setPassword}  
         /> 
+         <TextInput
+        style={{borderColor:'orange', borderWidth: 2, borderRadius: 30, width:'80%', alignSelf:'center', paddingVertical:10, textAlign:'center', marginVertical:20}}
+        placeholder='Password' 
+        value={password} 
+        onChangeText={setPassword}  
+        /> 
         <TouchableOpacity style={{alignSelf:'center', backgroundColor:'orange', width:'80%', borderRadius: 30,paddingVertical:10, marginVertical:20, }}>
 <Text style={{textAlign:'center'}}>Click Me</Text>
         </TouchableOpacity>
